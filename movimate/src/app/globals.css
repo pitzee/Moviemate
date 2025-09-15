@@ -24,3 +24,68 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom Scrollbar Styles */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-6);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-8);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--gray-2);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-6) var(--gray-2);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for movie containers */
+.movie-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 #e5e7eb;
+}
+
+.movie-scroll-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.movie-scroll-container::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 5px;
+  border: 2px solid #d1d5db;
+}
+
+.movie-scroll-container::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 5px;
+  border: 2px solid #7c3aed;
+}
+
+.movie-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+  border: 2px solid #6d28d9;
+}

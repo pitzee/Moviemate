@@ -144,8 +144,10 @@ export default function Recommendations() {
       <Box>
         <div
           ref={scrollContainerRef}
-          className="max-h-[70vh] overflow-y-auto pr-1"
-          style={{ scrollbarGutter: "stable" }}
+          className="max-h-[70vh] overflow-y-auto pr-1 movie-scroll-container"
+          style={{
+            scrollbarGutter: "stable",
+          }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-items-center sm:justify-items-start">
             {recommendedMovies.map((movie, index) => (

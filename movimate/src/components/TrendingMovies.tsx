@@ -78,7 +78,13 @@ export default function TrendingMovies() {
         Trending movies
       </Text>
 
-      <Box style={{ overflowX: "auto", paddingBottom: "10px" }}>
+      <Box
+        style={{
+          overflowX: "auto",
+          paddingBottom: "10px",
+        }}
+        className="movie-scroll-container"
+      >
         <Flex gap="4" style={{ minWidth: "max-content" }}>
           {trendingMovies.map((movie) => (
             <Box
