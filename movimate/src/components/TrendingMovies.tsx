@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import MovieCardSkeleton from "./MovieCardSkeleton";
+import Link from "next/link";
 
 interface Movie {
   id: number;
@@ -87,80 +88,81 @@ export default function TrendingMovies() {
       >
         <Flex gap="4" style={{ minWidth: "max-content" }}>
           {trendingMovies.map((movie) => (
-            <Box
-              key={movie.id}
-              style={{
-                minWidth: "200px",
-                height: "300px",
-                borderRadius: "8px",
-                cursor: "pointer",
-                transition: "transform 0.2s ease",
-                overflow: "hidden",
-                position: "relative",
-              }}
-              className="hover:scale-105"
-            >
-              {movie.poster_path ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/${IMAGE_SIZES.POSTER.MEDIUM}${movie.poster_path}`}
-                  alt={movie.title}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
-              ) : (
-                <Box
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "var(--gray-4)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--gray-11)",
-                    fontWeight: "600",
-                    fontSize: "16px",
-                  }}
-                >
-                  {movie.title}
-                </Box>
-              )}
-
-              {/* Movie title overlay */}
+            <Link key={movie.id} href={`/movie/${movie.id}`}>
               <Box
                 style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
-                  padding: "20px 10px 10px",
-                  color: "white",
+                  minWidth: "200px",
+                  height: "300px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  transition: "transform 0.2s ease",
+                  overflow: "hidden",
+                  position: "relative",
                 }}
+                className="hover:scale-105"
               >
-                <Text
-                  size="2"
-                  weight="bold"
+                {movie.poster_path ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/${IMAGE_SIZES.POSTER.MEDIUM}${movie.poster_path}`}
+                    alt={movie.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                ) : (
+                  <Box
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "var(--gray-4)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--gray-11)",
+                      fontWeight: "600",
+                      fontSize: "16px",
+                    }}
+                  >
+                    {movie.title}
+                  </Box>
+                )}
+
+                {/* Movie title overlay */}
+                <Box
                   style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
+                    padding: "20px 10px 10px",
                     color: "white",
-                    textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
                   }}
                 >
-                  {movie.title}
-                </Text>
-                <Text
-                  size="1"
-                  style={{
-                    color: "var(--gray-9)",
-                    textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
-                  }}
-                >
-                  {new Date(movie.release_date).getFullYear()}
-                </Text>
+                  <Text
+                    size="2"
+                    weight="bold"
+                    style={{
+                      color: "white",
+                      textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                    }}
+                  >
+                    {movie.title}
+                  </Text>
+                  <Text
+                    size="1"
+                    style={{
+                      color: "var(--gray-9)",
+                      textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
+                    }}
+                  >
+                    {new Date(movie.release_date).getFullYear()}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
+            </Link>
           ))}
         </Flex>
       </Box>

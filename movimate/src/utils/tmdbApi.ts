@@ -46,6 +46,33 @@ export const tmdbService = {
     });
     return response.data;
   },
+
+  // Get movie details
+  getMovieDetails: async (movieId: number) => {
+    const response = await tmdbApi.get(
+      `${TMDB_ENDPOINTS.MOVIE_DETAILS}/${movieId}`
+    );
+    return response.data;
+  },
+
+  // Get movie cast
+  getMovieCast: async (movieId: number) => {
+    const response = await tmdbApi.get(
+      `${TMDB_ENDPOINTS.MOVIE_CAST}/${movieId}/credits`
+    );
+    return response.data;
+  },
+
+  // Get similar movies
+  getSimilarMovies: async (movieId: number, page: number = 1) => {
+    const response = await tmdbApi.get(
+      `${TMDB_ENDPOINTS.SIMILAR_MOVIES}/${movieId}/similar`,
+      {
+        params: { page },
+      }
+    );
+    return response.data;
+  },
 };
 
 export default tmdbApi;

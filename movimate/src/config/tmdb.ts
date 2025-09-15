@@ -12,6 +12,9 @@ export const TMDB_ENDPOINTS = {
   POPULAR_MOVIES: "/movie/popular",
   TOP_RATED_MOVIES: "/movie/top_rated",
   SEARCH_MOVIES: "/search/movie",
+  MOVIE_DETAILS: "/movie",
+  MOVIE_CAST: "/movie",
+  SIMILAR_MOVIES: "/movie",
 };
 
 // Image sizes
