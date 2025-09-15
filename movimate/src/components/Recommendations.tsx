@@ -5,6 +5,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import MovieCardSkeleton from "./MovieCardSkeleton";
+import FavoriteButton from "./FavoriteButton";
 import Link from "next/link";
 
 interface Movie {
@@ -168,6 +169,11 @@ export default function Recommendations() {
                   }}
                   className="hover:scale-105"
                 >
+                  <FavoriteButton
+                    movie={movie}
+                    size="medium"
+                    position="top-right"
+                  />
                   {movie.poster_path ? (
                     <img
                       src={`https://image.tmdb.org/t/p/${IMAGE_SIZES.POSTER.MEDIUM}${movie.poster_path}`}

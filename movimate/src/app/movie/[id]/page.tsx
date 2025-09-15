@@ -14,6 +14,7 @@ import {
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import MovieCardSkeleton from "@/components/MovieCardSkeleton";
+import FavoriteButton from "@/components/FavoriteButton";
 import Link from "next/link";
 
 interface MovieDetails {
@@ -161,6 +162,7 @@ export default function MovieDetailPage() {
         <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8">
           <Container size="4">
             <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4 sm:gap-6">
+              <FavoriteButton movie={movie} size="large" position="top-right" />
               {movie.poster_path && (
                 <img
                   src={`https://image.tmdb.org/t/p/${IMAGE_SIZES.POSTER.LARGE}${movie.poster_path}`}

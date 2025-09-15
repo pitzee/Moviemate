@@ -10,12 +10,15 @@ import {
   TextField,
   IconButton,
   Container,
+  Badge,
 } from "@radix-ui/themes";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import MobileNavbar from "./MobileNavbar";
+import { useFavorites } from "@/contexts/FavoritesContext";
 
 export default function Navbar() {
   const [query, setQuery] = useState("");
+  const { favorites } = useFavorites();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -73,7 +76,25 @@ export default function Navbar() {
                       <Link href="/">HOME</Link>
                     </Button>
                     <Button asChild variant="soft" color="gray" size="2">
-                      <Link href="/favorite">Favorite</Link>
+                      <Link href="/favorite" className="relative">
+                        Favorites
+                        {favorites.length > 0 && (
+                          <Badge
+                            size="1"
+                            color="red"
+                            style={{
+                              position: "absolute",
+                              top: "-8px",
+                              right: "-8px",
+                              minWidth: "18px",
+                              height: "18px",
+                              fontSize: "10px",
+                            }}
+                          >
+                            {favorites.length}
+                          </Badge>
+                        )}
+                      </Link>
                     </Button>
                   </Flex>
                 </Flex>
