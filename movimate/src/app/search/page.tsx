@@ -2,22 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import {
-  Box,
-  Flex,
-  Text,
-  Container,
-  TextField,
-  Button,
-} from "@radix-ui/themes";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { Box, Flex, Text, Container, Button } from "@radix-ui/themes";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import MovieCardSkeleton from "@/components/MovieCardSkeleton";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import FavoriteButton from "@/components/FavoriteButton";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 interface Movie {
   id: number;
@@ -31,7 +22,6 @@ interface Movie {
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [query, setQuery] = useState(searchParams.get("q") || "");
   const [searchResults, setSearchResults] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
@@ -39,6 +29,12 @@ export default function SearchPage() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [totalResults, setTotalResults] = useState(0);
+
+  // Update query when search params change
+  useEffect(() => {
+    const newQuery = searchParams.get("q") || "";
+    setQuery(newQuery);
+  }, [searchParams]);
 
   // Perform search when query changes
   useEffect(() => {
@@ -88,23 +84,11 @@ export default function SearchPage() {
       setTotalResults(response.total_results);
       setPage(pageNum);
       setHasMore(response.page < response.total_pages);
-
-      // Update URL with search query
-      const params = new URLSearchParams();
-      params.set("q", searchQuery);
-      router.push(`/search?${params.toString()}`, { scroll: false });
     } catch (err) {
       setError("Failed to search movies");
       console.error("Error searching movies:", err);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (query.trim()) {
-      performSearch(query.trim());
     }
   };
 
@@ -118,33 +102,8 @@ export default function SearchPage() {
             weight="bold"
             style={{ color: "black", marginBottom: "20px" }}
           >
-            Search Movies
+            Search Results
           </Text>
-
-          {/* Search Form */}
-          <form onSubmit={handleSubmit}>
-            <Flex gap="2" align="center">
-              <TextField.Root
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search for movies..."
-                style={{
-                  flex: 1,
-                  maxWidth: "500px",
-                  backgroundColor: "var(--gray-2)",
-                  border: "1px solid var(--gray-6)",
-                  borderRadius: "8px",
-                }}
-              >
-                <TextField.Slot>
-                  <MagnifyingGlassIcon width="16" height="16" />
-                </TextField.Slot>
-              </TextField.Root>
-              <Button type="submit" disabled={loading || !query.trim()}>
-                Search
-              </Button>
-            </Flex>
-          </form>
 
           {/* Results Count */}
           {query && totalResults > 0 && (
@@ -154,6 +113,16 @@ export default function SearchPage() {
             >
               Found {totalResults.toLocaleString()} result
               {totalResults !== 1 ? "s" : ""} for "{query}"
+            </Text>
+          )}
+
+          {/* Search Another Movie Hint */}
+          {query && (
+            <Text
+              size="2"
+              style={{ color: "var(--gray-10)", marginTop: "8px" }}
+            >
+              Use the search bar above to search for another movie
             </Text>
           )}
         </Box>

@@ -27,9 +27,10 @@ export default function MobileNavbar() {
     if (query.trim()) {
       setIsSearching(true);
       router.push(`/search?q=${encodeURIComponent(query.trim())}`);
-      // Reset loading state after navigation
+      // Reset loading state and clear input after navigation
       setTimeout(() => {
         setIsSearching(false);
+        setQuery(""); // Clear the search input for next search
       }, 500);
     }
   }
