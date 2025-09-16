@@ -167,7 +167,7 @@ export default function SearchPage() {
 
         {/* No Results */}
         {query && !loading && searchResults.length === 0 && !error && (
-          <Box textAlign="center" py="8">
+          <Box py="8" style={{ textAlign: "center" }}>
             <Text size="4" style={{ color: "var(--gray-11)" }}>
               No movies found for "{query}"
             </Text>
