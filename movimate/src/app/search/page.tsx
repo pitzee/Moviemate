@@ -258,7 +258,7 @@ export default function SearchPage() {
                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
                         }}
                       >
-                        {new Date(movie.release_date).getFullYear()}
+                        {movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}
                       </Text>
                     </Box>
                   </Box>
