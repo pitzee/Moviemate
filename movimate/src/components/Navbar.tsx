@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Box,
   Flex,
@@ -19,10 +20,13 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const { favorites } = useFavorites();
+  const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // For now, do nothing; hook up to search route later
+    if (query.trim()) {
+      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+    }
   }
 
   return (
@@ -100,23 +104,28 @@ export default function Navbar() {
                 </Flex>
 
                 {/* Bottom row: Search */}
-                <Flex justify="end">
+                <Flex justify="end" gap="2">
                   <form onSubmit={handleSubmit}>
-                    <TextField.Root
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      placeholder="Search here"
-                      style={{
-                        width: "300px",
-                        backgroundColor: "var(--gray-2)",
-                        border: "1px solid var(--gray-6)",
-                        borderRadius: "20px",
-                      }}
-                    >
-                      <TextField.Slot>
-                        <MagnifyingGlassIcon width="16" height="16" />
-                      </TextField.Slot>
-                    </TextField.Root>
+                    <Flex gap="2" align="center">
+                      <TextField.Root
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Search here"
+                        style={{
+                          width: "300px",
+                          backgroundColor: "var(--gray-2)",
+                          border: "1px solid var(--gray-6)",
+                          borderRadius: "20px",
+                        }}
+                      >
+                        <TextField.Slot>
+                          <MagnifyingGlassIcon width="16" height="16" />
+                        </TextField.Slot>
+                      </TextField.Root>
+                      <Button type="submit" disabled={!query.trim()}>
+                        Search
+                      </Button>
+                    </Flex>
                   </form>
                 </Flex>
               </Flex>
