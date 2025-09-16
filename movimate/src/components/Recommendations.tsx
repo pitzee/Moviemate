@@ -114,9 +114,10 @@ export default function Recommendations() {
         >
           Recommendation for you
         </Text>
-        <div className="flex justify-center py-8">
-          <LoadingSpinner size="large" text="Loading recommendations..." />
+        <div className="flex justify-center py-4 mb-4">
+          <LoadingSpinner size="medium" text="Loading recommendations..." />
         </div>
+        <MovieCardSkeleton count={10} />
       </Container>
     );
   }

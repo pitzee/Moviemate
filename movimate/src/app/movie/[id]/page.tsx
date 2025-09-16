@@ -94,8 +94,20 @@ export default function MovieDetailPage() {
     return (
       <div className="min-h-screen bg-white">
         <Container size="4" py="4">
-          <div className="flex justify-center items-center min-h-[400px]">
-            <LoadingSpinner size="large" text="Loading movie details..." />
+          <div className="flex justify-center py-4 mb-4">
+            <LoadingSpinner size="medium" text="Loading movie details..." />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <Skeleton
+                style={{ width: "100%", height: "400px", borderRadius: "12px" }}
+              />
+            </div>
+            <div className="space-y-4">
+              <Skeleton style={{ width: "80%", height: "32px" }} />
+              <Skeleton style={{ width: "100%", height: "100px" }} />
+              <Skeleton style={{ width: "60%", height: "24px" }} />
+            </div>
           </div>
         </Container>
       </div>

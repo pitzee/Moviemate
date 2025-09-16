@@ -167,9 +167,12 @@ export default function SearchPage() {
 
         {/* Loading State */}
         {loading && searchResults.length === 0 && (
-          <div className="flex justify-center py-8">
-            <LoadingSpinner size="large" text="Searching movies..." />
-          </div>
+          <Box>
+            <div className="flex justify-center py-4 mb-4">
+              <LoadingSpinner size="medium" text="Searching movies..." />
+            </div>
+            <MovieCardSkeleton count={10} />
+          </Box>
         )}
 
         {/* No Results */}

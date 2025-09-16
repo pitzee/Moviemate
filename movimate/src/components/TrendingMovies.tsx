@@ -51,9 +51,10 @@ export default function TrendingMovies() {
         >
           Trending movies
         </Text>
-        <div className="flex justify-center py-8">
-          <LoadingSpinner size="large" text="Loading trending movies..." />
+        <div className="flex justify-center py-4 mb-4">
+          <LoadingSpinner size="medium" text="Loading trending movies..." />
         </div>
+        <MovieCardSkeleton count={5} />
       </Container>
     );
   }
