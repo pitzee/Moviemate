@@ -5,6 +5,7 @@ import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageLoader from "@/components/PageLoader";
 import { FavoritesProvider } from "@/contexts/FavoritesContext";
 
 const geistSans = Geist({
@@ -34,6 +35,7 @@ export default function RootLayout({
       >
         <Theme appearance="dark" accentColor="violet" radius="large">
           <FavoritesProvider>
+            <PageLoader />
             <Navbar />
             {children}
             <Footer />

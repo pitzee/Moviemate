@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import MovieCardSkeleton from "./MovieCardSkeleton";
+import LoadingSpinner from "./LoadingSpinner";
 import FavoriteButton from "./FavoriteButton";
 import Link from "next/link";
 
@@ -50,7 +51,9 @@ export default function TrendingMovies() {
         >
           Trending movies
         </Text>
-        <MovieCardSkeleton count={5} />
+        <div className="flex justify-center py-8">
+          <LoadingSpinner size="large" text="Loading trending movies..." />
+        </div>
       </Container>
     );
   }

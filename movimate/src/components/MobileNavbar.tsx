@@ -14,16 +14,25 @@ import {
 } from "@radix-ui/themes";
 import { MagnifyingGlassIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import * as Dialog from "@radix-ui/react-dialog";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function MobileNavbar() {
   const [query, setQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
   const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+      setIsSearching(true);
+      // Simulate search loading for now (since search page doesn't exist in main branch)
+      setTimeout(() => {
+        setIsSearching(false);
+        // For now, just show an alert since search functionality isn't implemented in main branch
+        alert(`Search functionality will be available soon! You searched for: "${query}"`);
+        setQuery("");
+      }, 1000);
     }
   }
 
@@ -93,6 +102,7 @@ export default function MobileNavbar() {
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                       placeholder="Search here"
+                      disabled={isSearching}
                       style={{
                         width: "240px",
                         backgroundColor: "var(--gray-2)",
@@ -101,11 +111,15 @@ export default function MobileNavbar() {
                       }}
                     >
                       <TextField.Slot>
-                        <MagnifyingGlassIcon width="16" height="16" />
+                        {isSearching ? (
+                          <LoadingSpinner size="small" />
+                        ) : (
+                          <MagnifyingGlassIcon width="16" height="16" />
+                        )}
                       </TextField.Slot>
                     </TextField.Root>
-                    <Button type="submit" disabled={!query.trim()} size="2">
-                      Search
+                    <Button type="submit" disabled={!query.trim() || isSearching} size="2">
+                      {isSearching ? "Searching..." : "Search"}
                     </Button>
                   </Flex>
                 </form>
