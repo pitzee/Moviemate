@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Box,
   Flex,
@@ -19,10 +20,13 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const { favorites } = useFavorites();
+  const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // For now, do nothing; hook up to search route later
+    if (query.trim()) {
+      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+    }
   }
 
   return (
