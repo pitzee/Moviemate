@@ -28,13 +28,11 @@ export default function Navbar() {
     event.preventDefault();
     if (query.trim()) {
       setIsSearching(true);
-      // Simulate search loading for now (since search page doesn't exist in main branch)
+      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+      // Reset loading state after navigation
       setTimeout(() => {
         setIsSearching(false);
-        // For now, just show an alert since search functionality isn't implemented in main branch
-        alert(`Search functionality will be available soon! You searched for: "${query}"`);
-        setQuery("");
-      }, 1000);
+      }, 500);
     }
   }
 
@@ -136,7 +134,10 @@ export default function Navbar() {
                           )}
                         </TextField.Slot>
                       </TextField.Root>
-                      <Button type="submit" disabled={!query.trim() || isSearching}>
+                      <Button
+                        type="submit"
+                        disabled={!query.trim() || isSearching}
+                      >
                         {isSearching ? "Searching..." : "Search"}
                       </Button>
                     </Flex>

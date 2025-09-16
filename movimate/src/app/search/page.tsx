@@ -14,6 +14,7 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import MovieCardSkeleton from "@/components/MovieCardSkeleton";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import FavoriteButton from "@/components/FavoriteButton";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -57,12 +58,12 @@ export default function SearchPage() {
     try {
       setLoading(true);
       const response = await tmdbService.searchMovies(query, page + 1);
-      
+
       // Filter out duplicate movies based on ID
       setSearchResults((prev) => {
         const existingIds = new Set(prev.map((movie) => movie.id));
         const newMovies = response.results.filter(
-          (movie) => !existingIds.has(movie.id)
+          (movie: Movie) => !existingIds.has(movie.id)
         );
         return [...prev, ...newMovies];
       });
@@ -82,12 +83,12 @@ export default function SearchPage() {
       setLoading(true);
       setError(null);
       const response = await tmdbService.searchMovies(searchQuery, pageNum);
-      
+
       setSearchResults(response.results);
       setTotalResults(response.total_results);
       setPage(pageNum);
       setHasMore(response.page < response.total_pages);
-      
+
       // Update URL with search query
       const params = new URLSearchParams();
       params.set("q", searchQuery);
@@ -119,7 +120,7 @@ export default function SearchPage() {
           >
             Search Movies
           </Text>
-          
+
           {/* Search Form */}
           <form onSubmit={handleSubmit}>
             <Flex gap="2" align="center">
@@ -147,8 +148,12 @@ export default function SearchPage() {
 
           {/* Results Count */}
           {query && totalResults > 0 && (
-            <Text size="3" style={{ color: "var(--gray-11)", marginTop: "8px" }}>
-              Found {totalResults.toLocaleString()} result{totalResults !== 1 ? 's' : ''} for "{query}"
+            <Text
+              size="3"
+              style={{ color: "var(--gray-11)", marginTop: "8px" }}
+            >
+              Found {totalResults.toLocaleString()} result
+              {totalResults !== 1 ? "s" : ""} for "{query}"
             </Text>
           )}
         </Box>
@@ -162,7 +167,9 @@ export default function SearchPage() {
 
         {/* Loading State */}
         {loading && searchResults.length === 0 && (
-          <MovieCardSkeleton count={10} />
+          <div className="flex justify-center py-8">
+            <LoadingSpinner size="large" text="Searching movies..." />
+          </div>
         )}
 
         {/* No Results */}
@@ -171,7 +178,10 @@ export default function SearchPage() {
             <Text size="4" style={{ color: "var(--gray-11)" }}>
               No movies found for "{query}"
             </Text>
-            <Text size="3" style={{ color: "var(--gray-10)", marginTop: "8px" }}>
+            <Text
+              size="3"
+              style={{ color: "var(--gray-10)", marginTop: "8px" }}
+            >
               Try searching with different keywords
             </Text>
           </Box>
@@ -258,7 +268,9 @@ export default function SearchPage() {
                           textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
                         }}
                       >
-                        {movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}
+                        {movie.release_date
+                          ? new Date(movie.release_date).getFullYear()
+                          : "N/A"}
                       </Text>
                     </Box>
                   </Box>
@@ -275,7 +287,14 @@ export default function SearchPage() {
                   variant="outline"
                   size="3"
                 >
-                  {loading ? "Loading..." : "Load More"}
+                  {loading ? (
+                    <Flex align="center" gap="2">
+                      <LoadingSpinner size="small" />
+                      Loading...
+                    </Flex>
+                  ) : (
+                    "Load More"
+                  )}
                 </Button>
               </Flex>
             )}
