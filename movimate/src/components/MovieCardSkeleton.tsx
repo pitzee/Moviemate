@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Skeleton } from "@radix-ui/themes";
+import { Box, Flex } from "@radix-ui/themes";
 
 interface MovieCardSkeletonProps {
   count?: number;

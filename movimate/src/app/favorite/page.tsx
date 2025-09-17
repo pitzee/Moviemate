@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Text, Container, Button } from "@radix-ui/themes";
+import { Box, Text, Container, Button } from "@radix-ui/themes";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { IMAGE_SIZES } from "@/config/tmdb";
 import FavoriteButton from "@/components/FavoriteButton";

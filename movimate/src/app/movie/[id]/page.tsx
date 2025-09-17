@@ -2,18 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import {
-  Box,
-  Flex,
-  Text,
-  Container,
-  Button,
-  Badge,
-  Skeleton,
-} from "@radix-ui/themes";
+import { Text, Container, Button, Badge, Skeleton } from "@radix-ui/themes";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";
-import MovieCardSkeleton from "@/components/MovieCardSkeleton";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import FavoriteButton from "@/components/FavoriteButton";
 import Link from "next/link";

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Text, Container } from "@radix-ui/themes";
+import { Box, Text, Container } from "@radix-ui/themes";
 
 export default function Footer() {
   // Automatically get current year

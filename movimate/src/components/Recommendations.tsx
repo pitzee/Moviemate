@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Text, Container } from "@radix-ui/themes";
+import { Box, Text, Container } from "@radix-ui/themes";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { tmdbService } from "@/utils/tmdbApi";
 import { IMAGE_SIZES } from "@/config/tmdb";

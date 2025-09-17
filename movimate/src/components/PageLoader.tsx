@@ -9,9 +9,6 @@ export default function PageLoader() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleStart = () => setIsLoading(true);
-    const handleComplete = () => setIsLoading(false);
-
     // Simulate loading time for route changes
     const timer = setTimeout(() => {
       setIsLoading(false);
