@@ -25,7 +25,7 @@ export default function FavoritesPage() {
               size="4"
               style={{ color: "var(--gray-11)", marginBottom: "32px" }}
             >
-              You haven't added any movies to your favorites yet.
+              You haven&apos;t added any movies to your favorites yet.
             </Text>
             <Text
               size="3"

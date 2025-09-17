@@ -62,7 +62,7 @@ export default function Recommendations() {
       setRecommendedMovies((prev) => {
         const existingIds = new Set(prev.map((movie) => movie.id));
         const newMovies = response.results.filter(
-          (movie) => !existingIds.has(movie.id)
+          (movie: Movie) => !existingIds.has(movie.id)
         );
         return [...prev, ...newMovies];
       });
@@ -255,7 +255,7 @@ export default function Recommendations() {
           {!hasMore && recommendedMovies.length > 0 && (
             <div className="text-center mt-8">
               <Text style={{ color: "var(--gray-11)" }}>
-                You've reached the end of recommendations
+                You&apos;ve reached the end of recommendations
               </Text>
             </div>
           )}

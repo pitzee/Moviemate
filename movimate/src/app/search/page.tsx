@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Box, Flex, Text, Container, Button } from "@radix-ui/themes";
 import { tmdbService } from "@/utils/tmdbApi";
@@ -20,7 +20,7 @@ interface Movie {
   vote_average: number;
 }
 
-export default function SearchPage() {
+function SearchPageContent() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("q") || "");
   const [searchResults, setSearchResults] = useState<Movie[]>([]);
@@ -112,7 +112,7 @@ export default function SearchPage() {
               style={{ color: "var(--gray-11)", marginTop: "8px" }}
             >
               Found {totalResults.toLocaleString()} result
-              {totalResults !== 1 ? "s" : ""} for "{query}"
+              {totalResults !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
             </Text>
           )}
 
@@ -148,7 +148,7 @@ export default function SearchPage() {
         {query && !loading && searchResults.length === 0 && !error && (
           <Box py="8" style={{ textAlign: "center" }}>
             <Text size="4" style={{ color: "var(--gray-11)" }}>
-              No movies found for "{query}"
+              No movies found for &ldquo;{query}&rdquo;
             </Text>
             <Text
               size="3"
@@ -275,7 +275,7 @@ export default function SearchPage() {
             {!hasMore && searchResults.length > 0 && (
               <div className="text-center mt-8">
                 <Text style={{ color: "var(--gray-11)" }}>
-                  You've reached the end of search results
+                  You&apos;ve reached the end of search results
                 </Text>
               </div>
             )}
@@ -283,5 +283,23 @@ export default function SearchPage() {
         )}
       </Container>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-white">
+          <Container size="4" py="6">
+            <div className="flex justify-center py-8">
+              <LoadingSpinner size="large" text="Loading search..." />
+            </div>
+          </Container>
+        </div>
+      }
+    >
+      <SearchPageContent />
+    </Suspense>
   );
 }
