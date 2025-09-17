@@ -82,24 +82,32 @@ export default function Navbar() {
                     </Flex>
                   </Link>
 
-                  <Flex gap="3" align="center">
+                  <Flex gap="3" align="center" style={{ paddingRight: "4px" }}>
                     <Button asChild variant="soft" color="gray" size="2">
                       <Link href="/">HOME</Link>
                     </Button>
                     <Button asChild variant="soft" color="gray" size="2">
-                      <Link href="/favorite" className="relative">
+                      <Link
+                        href="/favorite"
+                        style={{
+                          textDecoration: "none",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                        }}
+                      >
                         Favorites
                         {favorites.length > 0 && (
                           <Badge
                             size="1"
                             color="red"
                             style={{
-                              position: "absolute",
-                              top: "-8px",
-                              right: "-8px",
                               minWidth: "18px",
                               height: "18px",
                               fontSize: "10px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
                             }}
                           >
                             {favorites.length}
