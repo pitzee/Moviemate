@@ -11,7 +11,7 @@ export default function Footer() {
       <Container size="4" py="8">
         <div className="max-w-6xl mx-auto">
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
             {/* Brand Section */}
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
@@ -86,7 +86,7 @@ export default function Footer() {
               >
                 Follow Us
               </Text>
-              <div className="flex justify-center md:justify-start gap-4">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4">
                 {["Twitter", "Facebook", "Instagram", "YouTube"].map(
                   (social) => (
                     <Text
@@ -99,6 +99,7 @@ export default function Footer() {
                         borderRadius: "6px",
                         backgroundColor: "var(--gray-2)",
                         transition: "all 0.2s ease",
+                        minWidth: "fit-content",
                       }}
                       className="hover:text-gray-300 hover:bg-gray-700 transition-all duration-200"
                     >
@@ -118,7 +119,7 @@ export default function Footer() {
             <Text size="2" style={{ color: "var(--gray-11)" }}>
               © {currentYear} Moviemate. All rights reserved.
             </Text>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
               <Text
                 size="2"
                 style={{ color: "var(--gray-11)", cursor: "pointer" }}
