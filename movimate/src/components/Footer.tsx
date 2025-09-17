@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Text, Container } from "@radix-ui/themes";
+import { FaTwitter, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   // Automatically get current year
@@ -58,10 +59,22 @@ export default function Footer() {
                 Quick Links
               </Text>
               <div className="space-y-2">
-                {["About", "Contact", "Privacy Policy", "Terms of Service"].map(
-                  (link) => (
+                {[
+                  { name: "About", href: "#about" },
+                  { name: "Contact", href: "#contact" },
+                  { name: "Privacy Policy", href: "#privacy-policy" },
+                  { name: "Terms of Service", href: "#terms-of-service" },
+                ].map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    style={{ textDecoration: "none" }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      alert(`${link.name} page would open here`);
+                    }}
+                  >
                     <Text
-                      key={link}
                       size="3"
                       style={{
                         color: "var(--gray-11)",
@@ -70,10 +83,10 @@ export default function Footer() {
                       }}
                       className="hover:text-gray-300 transition-colors duration-200"
                     >
-                      {link}
+                      {link.name}
                     </Text>
-                  )
-                )}
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -87,10 +100,36 @@ export default function Footer() {
                 Follow Us
               </Text>
               <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4">
-                {["Twitter", "Facebook", "Instagram", "YouTube"].map(
-                  (social) => (
+                {[
+                  {
+                    name: "Twitter",
+                    url: "https://twitter.com",
+                    icon: FaTwitter,
+                  },
+                  {
+                    name: "Facebook",
+                    url: "https://facebook.com",
+                    icon: FaFacebook,
+                  },
+                  {
+                    name: "Instagram",
+                    url: "https://instagram.com",
+                    icon: FaInstagram,
+                  },
+                  {
+                    name: "YouTube",
+                    url: "https://youtube.com",
+                    icon: FaYoutube,
+                  },
+                ].map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none" }}
+                  >
                     <Text
-                      key={social}
                       size="3"
                       style={{
                         color: "var(--gray-11)",
@@ -100,13 +139,17 @@ export default function Footer() {
                         backgroundColor: "var(--gray-2)",
                         transition: "all 0.2s ease",
                         minWidth: "fit-content",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
                       }}
                       className="hover:text-gray-300 hover:bg-gray-700 transition-all duration-200"
                     >
-                      {social}
+                      <social.icon size={16} style={{ marginRight: "6px" }} />
+                      {social.name}
                     </Text>
-                  )
-                )}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -120,20 +163,38 @@ export default function Footer() {
               © {currentYear} Moviemate. All rights reserved.
             </Text>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-              <Text
-                size="2"
-                style={{ color: "var(--gray-11)", cursor: "pointer" }}
-                className="hover:text-gray-300 transition-colors"
+              <a
+                href="#privacy-policy"
+                style={{ textDecoration: "none" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("Privacy Policy page would open here");
+                }}
               >
-                Privacy Policy
-              </Text>
-              <Text
-                size="2"
-                style={{ color: "var(--gray-11)", cursor: "pointer" }}
-                className="hover:text-gray-300 transition-colors"
+                <Text
+                  size="2"
+                  style={{ color: "var(--gray-11)", cursor: "pointer" }}
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Privacy Policy
+                </Text>
+              </a>
+              <a
+                href="#terms-of-service"
+                style={{ textDecoration: "none" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("Terms of Service page would open here");
+                }}
               >
-                Terms of Service
-              </Text>
+                <Text
+                  size="2"
+                  style={{ color: "var(--gray-11)", cursor: "pointer" }}
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Terms of Service
+                </Text>
+              </a>
             </div>
           </div>
         </div>
