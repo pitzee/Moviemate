@@ -12,13 +12,7 @@ import {
   IconButton,
   Container,
 } from "@radix-ui/themes";
-import {
-  MagnifyingGlassIcon,
-  HamburgerMenuIcon,
-  HomeIcon,
-  HeartIcon,
-  MagnifyingGlassIcon as SearchIcon,
-} from "@radix-ui/react-icons";
+import { FaSearch, FaBars, FaHome, FaHeart, FaTimes } from "react-icons/fa";
 import * as Dialog from "@radix-ui/react-dialog";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -102,11 +96,7 @@ export default function MobileNavbar() {
                   }}
                   className="hover:bg-white hover:bg-opacity-20 hover:scale-105"
                 >
-                  <HamburgerMenuIcon
-                    width="18"
-                    height="18"
-                    style={{ color: "var(--gray-12)" }}
-                  />
+                  <FaBars size={18} style={{ color: "var(--gray-12)" }} />
                 </IconButton>
               </Flex>
 
@@ -130,7 +120,7 @@ export default function MobileNavbar() {
                         {isSearching ? (
                           <LoadingSpinner size="small" />
                         ) : (
-                          <MagnifyingGlassIcon width="16" height="16" />
+                          <FaSearch size={16} />
                         )}
                       </TextField.Slot>
                     </TextField.Root>
@@ -207,7 +197,7 @@ export default function MobileNavbar() {
                         height: "32px",
                       }}
                     >
-                      ✕
+                      <FaTimes size={16} />
                     </IconButton>
                   </Dialog.Close>
                 </Flex>
@@ -244,11 +234,7 @@ export default function MobileNavbar() {
                         backgroundColor: "var(--violet-9)",
                       }}
                     />
-                    <HomeIcon
-                      width="16"
-                      height="16"
-                      style={{ color: "var(--violet-9)" }}
-                    />
+                    <FaHome size={16} style={{ color: "var(--violet-9)" }} />
                     <Text
                       size="3"
                       weight="medium"
@@ -286,11 +272,7 @@ export default function MobileNavbar() {
                         backgroundColor: "var(--red-9)",
                       }}
                     />
-                    <HeartIcon
-                      width="16"
-                      height="16"
-                      style={{ color: "var(--red-9)" }}
-                    />
+                    <FaHeart size={16} style={{ color: "var(--red-9)" }} />
                     <Text
                       size="3"
                       weight="medium"
@@ -328,11 +310,7 @@ export default function MobileNavbar() {
                         backgroundColor: "var(--blue-9)",
                       }}
                     />
-                    <SearchIcon
-                      width="16"
-                      height="16"
-                      style={{ color: "var(--blue-9)" }}
-                    />
+                    <FaSearch size={16} style={{ color: "var(--blue-9)" }} />
                     <Text
                       size="3"
                       weight="medium"
