@@ -124,7 +124,7 @@ export default function ContactPage() {
               size="6"
               weight="bold"
               style={{
-                color: "var(--gray-12)",
+                color: "black",
                 marginBottom: "24px",
                 textAlign: "center",
               }}
@@ -187,7 +187,7 @@ export default function ContactPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               About This Project
             </Heading>

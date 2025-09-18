@@ -43,7 +43,7 @@ export default function AboutPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               Project Overview
             </Heading>
@@ -80,7 +80,7 @@ export default function AboutPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               Key Features
             </Heading>
@@ -149,7 +149,7 @@ export default function AboutPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               Technologies Used
             </Heading>
@@ -190,7 +190,7 @@ export default function AboutPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               Developer
             </Heading>

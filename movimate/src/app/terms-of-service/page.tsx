@@ -74,7 +74,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               1. Acceptance of Terms
             </Heading>
@@ -107,7 +107,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               2. Description of Service
             </Heading>
@@ -170,7 +170,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               3. User Responsibilities
             </Heading>
@@ -234,7 +234,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               4. Intellectual Property Rights
             </Heading>
@@ -281,7 +281,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               5. Prohibited Uses
             </Heading>
@@ -357,7 +357,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               6. Service Availability
             </Heading>
@@ -414,7 +414,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               7. Disclaimer of Warranties
             </Heading>
@@ -466,7 +466,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               8. Limitation of Liability
             </Heading>
@@ -502,7 +502,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               9. Termination
             </Heading>
@@ -536,7 +536,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               10. Changes to Terms
             </Heading>
@@ -570,7 +570,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               11. Contact Information
             </Heading>
@@ -617,7 +617,7 @@ export default function TermsOfServicePage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               12. Governing Law
             </Heading>

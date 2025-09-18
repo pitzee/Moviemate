@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               1. Information We Collect
             </Heading>
@@ -210,7 +210,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               2. How We Use Your Information
             </Heading>
@@ -282,7 +282,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               3. Information Sharing and Disclosure
             </Heading>
@@ -331,7 +331,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               4. Data Security
             </Heading>
@@ -380,7 +380,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               5. Third-Party Services
             </Heading>
@@ -422,7 +422,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               6. Your Rights
             </Heading>
@@ -477,7 +477,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               7. Contact Us
             </Heading>
@@ -524,7 +524,7 @@ export default function PrivacyPolicyPage() {
             <Heading
               size="6"
               weight="bold"
-              style={{ color: "var(--gray-12)", marginBottom: "16px" }}
+              style={{ color: "black", marginBottom: "16px" }}
             >
               8. Changes to This Privacy Policy
             </Heading>
