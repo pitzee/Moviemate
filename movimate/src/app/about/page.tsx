@@ -213,11 +213,18 @@ export default function AboutPage() {
               </Text>
               <Text
                 size="3"
-                style={{ color: "var(--gray-11)", marginBottom: "12px" }}
+                style={{
+                  color: "var(--gray-11)",
+                  marginBottom: "12px",
+                  marginLeft: "10px",
+                }}
               >
                 ALX Ethiopia Frontend Pro Dev Student
               </Text>
-              <Text size="3" style={{ color: "var(--violet-9)" }}>
+              <Text
+                size="3"
+                style={{ color: "var(--violet-9)", marginLeft: "10px" }}
+              >
                 pitzee421@gmail.com
               </Text>
             </Box>

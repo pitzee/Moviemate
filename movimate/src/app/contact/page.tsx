@@ -16,14 +16,14 @@ export default function ContactPage() {
       icon: FaLinkedin,
       label: "LinkedIn",
       value: "Connect with me",
-      link: "https://linkedin.com/in/petros-birkneh",
+      link: "https://www.linkedin.com/in/petros-birkneh-175654142",
       color: "var(--blue-9)",
     },
     {
       icon: FaGithub,
       label: "GitHub",
       value: "View my projects",
-      link: "https://github.com/petros-birkneh",
+      link: "https://github.com/pitzee",
       color: "var(--gray-9)",
     },
     {
@@ -97,7 +97,11 @@ export default function ContactPage() {
               </Text>
               <Text
                 size="3"
-                style={{ color: "var(--gray-11)", marginBottom: "16px" }}
+                style={{
+                  color: "var(--gray-11)",
+                  marginBottom: "16px",
+                  marginLeft: "10px",
+                }}
               >
                 Frontend Developer & ALX Ethiopia Student
               </Text>
@@ -172,7 +176,10 @@ export default function ContactPage() {
                       >
                         {contact.label}
                       </Text>
-                      <Text size="3" style={{ color: "var(--gray-11)" }}>
+                      <Text
+                        size="3"
+                        style={{ color: "var(--gray-11)", marginLeft: "10px" }}
+                      >
                         {contact.value}
                       </Text>
                     </div>
@@ -262,6 +269,7 @@ export default function ContactPage() {
                 padding: "12px 32px",
                 fontSize: "16px",
                 fontWeight: "600",
+                marginLeft: "20px",
               }}
               onClick={() => handleContactClick("mailto:pitzee421@gmail.com")}
               className="hover:bg-violet-10 transition-colors"
