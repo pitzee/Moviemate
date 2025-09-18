@@ -2,6 +2,7 @@
 
 import { Box, Text, Container } from "@radix-ui/themes";
 import { FaTwitter, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   // Automatically get current year
@@ -60,19 +61,15 @@ export default function Footer() {
               </Text>
               <div className="space-y-2">
                 {[
-                  { name: "About", href: "#about" },
-                  { name: "Contact", href: "#contact" },
-                  { name: "Privacy Policy", href: "#privacy-policy" },
-                  { name: "Terms of Service", href: "#terms-of-service" },
+                  { name: "About", href: "/about" },
+                  { name: "Contact", href: "/contact" },
+                  { name: "Privacy Policy", href: "/privacy-policy" },
+                  { name: "Terms of Service", href: "/terms-of-service" },
                 ].map((link) => (
-                  <a
+                  <Link
                     key={link.name}
                     href={link.href}
                     style={{ textDecoration: "none" }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert(`${link.name} page would open here`);
-                    }}
                   >
                     <Text
                       size="3"
@@ -85,7 +82,7 @@ export default function Footer() {
                     >
                       {link.name}
                     </Text>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -163,14 +160,7 @@ export default function Footer() {
               © {currentYear} Moviemate. All rights reserved.
             </Text>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-              <a
-                href="#privacy-policy"
-                style={{ textDecoration: "none" }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Privacy Policy page would open here");
-                }}
-              >
+              <Link href="/privacy-policy" style={{ textDecoration: "none" }}>
                 <Text
                   size="2"
                   style={{ color: "var(--gray-11)", cursor: "pointer" }}
@@ -178,15 +168,8 @@ export default function Footer() {
                 >
                   Privacy Policy
                 </Text>
-              </a>
-              <a
-                href="#terms-of-service"
-                style={{ textDecoration: "none" }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Terms of Service page would open here");
-                }}
-              >
+              </Link>
+              <Link href="/terms-of-service" style={{ textDecoration: "none" }}>
                 <Text
                   size="2"
                   style={{ color: "var(--gray-11)", cursor: "pointer" }}
@@ -194,7 +177,7 @@ export default function Footer() {
                 >
                   Terms of Service
                 </Text>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
