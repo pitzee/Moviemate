@@ -39,7 +39,7 @@ export default function NotFound() {
               size="7"
               weight="bold"
               style={{
-                color: "var(--gray-12)",
+                color: "red",
                 marginBottom: "16px",
                 fontSize: "32px",
               }}
@@ -194,19 +194,6 @@ export default function NotFound() {
               <FaArrowLeft style={{ marginRight: "8px" }} />
               Go Back
             </Button>
-          </Box>
-
-          {/* Developer Info */}
-          <Box className="mt-12 pt-8 border-t border-gray-200">
-            <Text
-              size="2"
-              style={{
-                color: "var(--gray-10)",
-                fontStyle: "italic",
-              }}
-            >
-              Built by Petros Birkneh for ALX Ethiopia Frontend Pro Dev Course
-            </Text>
           </Box>
         </div>
       </Container>

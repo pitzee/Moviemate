@@ -52,7 +52,7 @@ export default function Error({
               size="7"
               weight="bold"
               style={{
-                color: "var(--gray-12)",
+                color: "black",
                 marginBottom: "16px",
                 fontSize: "32px",
               }}
@@ -207,19 +207,6 @@ export default function Error({
               <FaBug style={{ marginRight: "6px" }} />
               Report Issue
             </Button>
-          </Box>
-
-          {/* Developer Info */}
-          <Box className="mt-8 pt-6 border-t border-gray-200">
-            <Text
-              size="2"
-              style={{
-                color: "var(--gray-10)",
-                fontStyle: "italic",
-              }}
-            >
-              Built by Petros Birkneh for ALX Ethiopia Frontend Pro Dev Course
-            </Text>
           </Box>
         </div>
       </Container>

@@ -74,7 +74,7 @@ class ErrorBoundary extends Component<Props, State> {
                   size="5"
                   weight="bold"
                   style={{
-                    color: "var(--gray-12)",
+                    color: "#dc2626",
                     marginBottom: "12px",
                   }}
                 >
