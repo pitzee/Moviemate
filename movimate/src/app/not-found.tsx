@@ -2,6 +2,7 @@
 
 import { Container, Text, Box, Heading, Button } from "@radix-ui/themes";
 import Link from "next/link";
+import Image from "next/image";
 import { FaHome, FaSearch, FaHeart, FaArrowLeft } from "react-icons/fa";
 
 export default function NotFound() {
@@ -9,6 +10,34 @@ export default function NotFound() {
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-purple-50 flex items-center justify-center p-4">
       <Container size="3" className="w-full">
         <div className="max-w-2xl mx-auto text-center px-4">
+          {/* Logo */}
+          <Box className="mb-6">
+            <div className="flex justify-center">
+              <Box
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  border: "3px solid rgba(139, 92, 246, 0.3)",
+                  boxShadow: "0 4px 20px rgba(139, 92, 246, 0.2)",
+                }}
+              >
+                <Image
+                  src="/Images/logo.jpeg"
+                  alt="Moviemate Logo"
+                  width={80}
+                  height={80}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+            </div>
+          </Box>
+
           {/* 404 Animation */}
           <Box className="mb-6 sm:mb-8">
             <div className="relative">

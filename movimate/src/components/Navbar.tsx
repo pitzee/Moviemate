@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import {
   Box,
   Flex,
@@ -61,16 +62,22 @@ export default function Navbar() {
                           width: "48px",
                           height: "48px",
                           borderRadius: "50%",
-                          backgroundColor: "var(--gray-3)",
-                          color: "var(--gray-12)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontWeight: "600",
-                          fontSize: "16px",
+                          overflow: "hidden",
+                          border: "2px solid rgba(255, 255, 255, 0.2)",
+                          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
                         }}
                       >
-                        MM
+                        <Image
+                          src="/Images/logo.jpeg"
+                          alt="Moviemate Logo"
+                          width={48}
+                          height={48}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
                       </Box>
                       <Text
                         size="4"
