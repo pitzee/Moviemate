@@ -2,7 +2,7 @@
 
 A modern, responsive movie discovery platform built with Next.js and The Movie Database (TMDB) API. Discover trending movies, search for your favorites, and create your personal movie collection with a beautiful, dark-themed interface.
 
-![Moviemate Logo](/Images/logo.jpeg)
+![Moviemate Logo](movimate/public/Images/logo.jpeg)
 
 ## ✨ Features
 
