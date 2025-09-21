@@ -36,6 +36,15 @@ function SearchPageContent() {
     setQuery(newQuery);
   }, [searchParams]);
 
+  // Update document title based on search query
+  useEffect(() => {
+    if (query.trim()) {
+      document.title = `Search: "${query}" - Moviemate`;
+    } else {
+      document.title = "Search Movies - Moviemate";
+    }
+  }, [query]);
+
   // Perform search when query changes
   useEffect(() => {
     if (query.trim()) {

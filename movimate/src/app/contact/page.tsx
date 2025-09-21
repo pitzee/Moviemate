@@ -1,9 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
 import { Container, Text, Box, Heading, Button } from "@radix-ui/themes";
 import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function ContactPage() {
+  // Update document title
+  useEffect(() => {
+    document.title = "Contact - Moviemate";
+  }, []);
   const contactInfo = [
     {
       icon: FaEnvelope,

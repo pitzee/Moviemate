@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { Box, Text, Container, Button } from "@radix-ui/themes";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { IMAGE_SIZES } from "@/config/tmdb";
@@ -8,6 +9,11 @@ import Link from "next/link";
 
 export default function FavoritesPage() {
   const { favorites, removeFromFavorites } = useFavorites();
+
+  // Update document title
+  useEffect(() => {
+    document.title = `My Favorites (${favorites.length}) - Moviemate`;
+  }, [favorites.length]);
 
   if (favorites.length === 0) {
     return (

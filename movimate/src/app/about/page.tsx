@@ -1,8 +1,13 @@
 "use client";
 
+import { useEffect } from "react";
 import { Container, Text, Box, Heading } from "@radix-ui/themes";
 
 export default function AboutPage() {
+  // Update document title
+  useEffect(() => {
+    document.title = "About - Moviemate";
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       <Container size="4" py="8">

@@ -81,6 +81,13 @@ export default function MovieDetailPage() {
     }
   }, [movieId]);
 
+  // Update document title when movie data is loaded
+  useEffect(() => {
+    if (movie) {
+      document.title = `${movie.title} - Moviemate`;
+    }
+  }, [movie]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white">
