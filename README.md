@@ -36,7 +36,7 @@ A modern, responsive movie discovery platform built with Next.js and The Movie D
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/pitzee/Moviemate.git
    cd movimate
    ```
 
