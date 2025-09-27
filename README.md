@@ -277,3 +277,9 @@ The app can be deployed on any platform that supports Next.js:
 - [ ] PWA support
 
 Enjoy discovering amazing movies with Moviemate! 🎬✨
+
+🧠 Use of AI in This Project
+
+This project utilizes Artificial Intelligence (AI) to support or enhance various aspects of development.
+
+Code Assistance: AI tools (ChatGPT) is used for generating boilerplate code, optimizing functions, and troubleshooting errors.
