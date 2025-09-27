@@ -10,7 +10,6 @@ A modern, responsive movie discovery platform built with Next.js and The Movie D
 - 🔍 **Advanced Search**: Find movies by title with real-time search
 - ❤️ **Favorites System**: Save and manage your favorite movies
 - 📱 **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- 🌙 **Dark Theme**: Beautiful dark interface with violet accents
 - ⚡ **Fast Performance**: Built with Next.js 15 and optimized for speed
 - 🎨 **Modern UI**: Clean, intuitive interface using Radix UI components
 <img width="1285" height="692" alt="Screenshot From 2025-09-27 12-06-15" src="https://github.com/user-attachments/assets/3b8a9c84-41ba-45ee-a117-a8ee09b82ece" />
