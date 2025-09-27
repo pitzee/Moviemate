@@ -14,6 +14,10 @@ A modern, responsive movie discovery platform built with Next.js and The Movie D
 - ⚡ **Fast Performance**: Built with Next.js 15 and optimized for speed
 - 🎨 **Modern UI**: Clean, intuitive interface using Radix UI components
 
+  <img width="1299" height="650" alt="Screenshot From 2025-09-21 13-17-46" src="https://github.com/user-attachments/assets/e2ad43c6-80db-4217-96d2-1e7ebd08b59f" />
+
+  
+
 ## 🚀 Getting Started
 
 ### Prerequisites
