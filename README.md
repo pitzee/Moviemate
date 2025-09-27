@@ -13,8 +13,13 @@ A modern, responsive movie discovery platform built with Next.js and The Movie D
 - 🌙 **Dark Theme**: Beautiful dark interface with violet accents
 - ⚡ **Fast Performance**: Built with Next.js 15 and optimized for speed
 - 🎨 **Modern UI**: Clean, intuitive interface using Radix UI components
+<img width="1285" height="692" alt="Screenshot From 2025-09-27 12-06-15" src="https://github.com/user-attachments/assets/3b8a9c84-41ba-45ee-a117-a8ee09b82ece" />
+<img width="1285" height="692" alt="Screenshot From 2025-09-27 12-06-37" src="https://github.com/user-attachments/assets/883f3755-b2a4-41cd-9b98-7aa4f95f2eda" />
+<img width="1285" height="692" alt="Screenshot From 2025-09-27 12-07-00" src="https://github.com/user-attachments/assets/274be405-fe43-49e4-a017-bf669304f598" />
+<img width="1285" height="692" alt="Screenshot From 2025-09-27 12-07-33" src="https://github.com/user-attachments/assets/2742338c-50d8-4b9b-8021-6d5b6b501db1" />
 
-  <img width="1299" height="650" alt="Screenshot From 2025-09-21 13-17-46" src="https://github.com/user-attachments/assets/e2ad43c6-80db-4217-96d2-1e7ebd08b59f" />
+
+
 
   
 
